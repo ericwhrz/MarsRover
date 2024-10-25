@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'marsrover'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.mockito:mockito-inline:4.0.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:4.0.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'marsrover.Main'
+    }
+}
